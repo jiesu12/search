@@ -1,6 +1,23 @@
 server.port: 8110
 
-eureka.client.serviceUrl.defaultZone: http://gate:8000/eureka
+eureka:
+  client.serviceUrl.defaultZone: http://192.168.1.158:8000/eureka
+  instance:
+    preferIpAddress: true
+
+management:
+  server:
+    port: 8111
+    ssl.enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging.file: /tmp/search-service.log
 
 search:
   index:
