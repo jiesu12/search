@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>jiesu</groupId>
-	<artifactId>search</artifactId>
+	<artifactId>search-service</artifactId>
 	<version>1.3.0</version>
 	<name>search</name>
 	<description>Search Service</description>

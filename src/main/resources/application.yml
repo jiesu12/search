@@ -17,7 +17,7 @@ management:
     health:
       show-details: ALWAYS
 
-logging.file: /tmp/search-service.log
+logging.file.name: /tmp/search-service.log
 
 search:
   index:
