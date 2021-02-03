@@ -1,7 +1,7 @@
 server.port: 8110
 
 eureka:
-  client.serviceUrl.defaultZone: http://192.168.1.158:8000/eureka
+  client.serviceUrl.defaultZone: http://192.168.1.103:8761/eureka
   instance:
     preferIpAddress: true
 
@@ -21,4 +21,4 @@ logging.file.name: /tmp/search-service.log
 
 search:
   index:
-    dir: /home/jie/tmp/index
+    dir: /tmp/searchservice

@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*
 class SearchController(val searchService: SearchService) {
 
     @PostMapping
-    fun index(@RequestParam indexName: String, @RequestParam path: String, @RequestBody content: String) =
+    fun index(@RequestParam indexName: String,
+              @RequestParam path: String,
+              @RequestBody(required = false) content: String?) =
             searchService.index(indexName, path, content)
 
     @GetMapping("/api")

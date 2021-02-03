@@ -43,7 +43,7 @@ class SearchService(val indexDir: File) {
         val log: Logger = LoggerFactory.getLogger(SearchService::class.java)
     }
 
-    fun index(indexName: String, filePath: String, content: String) {
+    fun index(indexName: String, filePath: String, content: String?) {
         getIndexWriter(indexName).use { writer ->
             // make a new, empty document
             val doc = Document()
@@ -57,7 +57,9 @@ class SearchService(val indexDir: File) {
             doc.add(TextField(FIELD_NAME, filePath, Field.Store.YES))
 
             // content will be split into words.
-            doc.add(TextField(FIELD_CONTENT, content, Field.Store.YES))
+            if (content != null) {
+                doc.add(TextField(FIELD_CONTENT, content, Field.Store.YES))
+            }
 
             if (writer.config.openMode == OpenMode.CREATE) {
                 // New index, add the document
@@ -120,7 +122,7 @@ class SearchService(val indexDir: File) {
     }
 
     fun deleteAll(indexName: String) {
-        getIndexWriter(indexName).use {  it.deleteAll() }
+        getIndexWriter(indexName).use { it.deleteAll() }
     }
 
     private fun getIndexWriter(indexName: String): IndexWriter {
