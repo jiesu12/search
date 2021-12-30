@@ -44,6 +44,7 @@ class SearchService(val indexDir: File) {
     }
 
     fun index(indexName: String, filePath: String, content: String?) {
+        log.info("Start indexing.")
         getIndexWriter(indexName).use { writer ->
             // make a new, empty document
             val doc = Document()
@@ -111,6 +112,7 @@ class SearchService(val indexDir: File) {
     }
 
     fun delete(indexName: String, filePath: String) {
+        log.info("Delete index name - {}", indexName)
         try {
             getIndexWriter(indexName).use { writer ->
                 log.debug("deleting search index of {}", filePath)
@@ -122,6 +124,7 @@ class SearchService(val indexDir: File) {
     }
 
     fun deleteAll(indexName: String) {
+        log.info("Delete all index - {}", indexName)
         getIndexWriter(indexName).use { it.deleteAll() }
     }
 
