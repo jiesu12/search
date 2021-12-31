@@ -4,7 +4,7 @@ import jiesu.search.service.SearchService
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 class SearchController(val searchService: SearchService) {
 
     @PostMapping
@@ -13,7 +13,7 @@ class SearchController(val searchService: SearchService) {
               @RequestBody(required = false) content: String?) =
             searchService.index(indexName, path, content)
 
-    @GetMapping("/api")
+    @GetMapping
     fun search(@RequestParam indexName: String,
                @RequestParam terms: String,
                @RequestParam pageIndex: Int,

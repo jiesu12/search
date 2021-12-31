@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 class SecurityConfig(val tokenAuthenticationFilter: TokenAuthenticationFilter,
-                     @Value("\${fileservice.security.enabled:true}") val secured: Boolean) : WebSecurityConfigurerAdapter() {
+                     @Value("\${searchservice.security.enabled:true}") val secured: Boolean) : WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http.csrf().disable()
