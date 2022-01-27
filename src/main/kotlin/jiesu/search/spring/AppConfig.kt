@@ -1,9 +1,9 @@
 package jiesu.search.spring
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import jiesu.fileswim.service.PublicKeyUpdater
-import jiesu.fileswim.service.TokenAuthenticationFilter
-import jiesu.fileswim.service.model.PublicKeyHolder
+import jiesu.service.PublicKeyUpdater
+import jiesu.service.TokenAuthenticationFilter
+import jiesu.service.model.PublicKeyHolder
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cloud.client.discovery.DiscoveryClient
 import org.springframework.context.annotation.Bean

@@ -1,6 +1,6 @@
 package jiesu.search.spring
 
-import jiesu.fileswim.service.TokenAuthenticationFilter
+import jiesu.service.TokenAuthenticationFilter
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
