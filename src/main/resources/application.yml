@@ -1,6 +1,6 @@
 server.port: 8110
 
-spring.application.name: searchservice
+spring.application.name: search
 
 eureka:
   client.serviceUrl.defaultZone: http://192.168.1.101:8761/eureka
